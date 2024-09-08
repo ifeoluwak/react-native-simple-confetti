@@ -16,8 +16,10 @@ fromCenter=true
 To install the Confetti Library, run the following command:
 
 ```bash
-npm install react-native-ife-test-lib-2
+npm install react-native-simple-confetti
 ```
+
+Also install `react-native-reanimated` and `react-native-svg`.
 
 ### Expo
 
@@ -26,7 +28,6 @@ Package is compatible with expo. Make sure you install `react-native-reanimated`
 ```bash
 npx expo install react-native-reanimated react-native-svg
 ```
-
 
 Checkout expo doc for further guidance:
 [[reanimated](https://docs.expo.dev/versions/latest/sdk/reanimated/)]
@@ -38,7 +39,7 @@ Checkout expo doc for further guidance:
 Import the Confetti component from the Confetti Library and use it in your React Native application.
 
 ```tsx
-import Confetti from 'react-native-ife-test-lib-2';
+import Confetti from 'react-native-simple-confetti';
 
 const App = () => {
   return (
