@@ -5,6 +5,7 @@
   "source": "./src/index.tsx",
   "main": "./lib/commonjs/index.js",
   "module": "./lib/module/index.js",
+  "types": "./lib/typescript/module/src/index.d.ts",
   "exports": {
     ".": {
       "import": {
@@ -46,8 +47,9 @@
   },
   "keywords": [
     "react-native",
-    "ios",
-    "android"
+    "reanimated",
+    "confetti",
+    "expo"
   ],
   "repository": {
     "type": "git",
@@ -79,6 +81,8 @@
     "react": "18.2.0",
     "react-native": "0.74.5",
     "react-native-builder-bob": "^0.30.0",
+    "react-native-reanimated": "^3.15.1",
+    "react-native-svg": "^15.6.0",
     "release-it": "^15.0.0",
     "typescript": "^5.2.2"
   },
@@ -87,7 +91,9 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-reanimated": "*",
+    "react-native-svg": "*"
   },
   "workspaces": [
     "example"
