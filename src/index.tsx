@@ -49,7 +49,7 @@ const Confetti = ({
     height: number;
   } | null>(null);
 
-  const maxCount = useMemo(() => (count > 150 ? 150 : count), [count]);
+  const maxCount = useMemo(() => (count > 100 ? 100 : count), [count]);
 
   const arrayOfConfettis = useMemo(
     () => Array.from({ length: maxCount }, (_, i) => i),
