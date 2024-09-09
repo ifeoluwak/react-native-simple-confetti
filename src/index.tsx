@@ -31,6 +31,9 @@ const Confetti = ({
   testID,
 }: {
   count?: number;
+  // start and stop are the y-axis values for the confetti to start and stop
+  // start is default to the height of the container
+  // stop is default to 0, which is the top of the container
   start?: number;
   stop?: number;
   speed?: number;
@@ -56,6 +59,20 @@ const Confetti = ({
   const ConfettiElement =
     type === 'fall' ? ConfettiItemFall : ConfettiItemTumble;
 
+  // If start is 0 and stop is not defined, set stop to layout height
+  // This is to prevent confetti from staying stuck at the top of the screen
+  if (start === 0 && !stop) {
+    stop = layout?.height;
+  }
+
+  // if stop is is at the bottom of the screen and start is not defined, set start to 0
+  // This is to prevent confetti from staying stuck at the bottom of the screen
+  if (stop && layout?.height) {
+    if (stop >= layout.height && !start) {
+      start = 0;
+    }
+  }
+
   if (images && images?.length >= 1) {
     return (
       <View
@@ -79,6 +96,7 @@ const Confetti = ({
                   stop={stop ?? 0}
                   speed={speed}
                   img={imgIdx}
+                  // split the confetti to fall from left and right in an alternating fashion
                   direction={i % 2 === 0 ? 'left' : 'right'}
                   itemSize={itemSize}
                   layout={layout}
